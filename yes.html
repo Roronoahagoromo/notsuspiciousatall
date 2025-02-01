@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See You Soon!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('File 2.jpg') no-repeat center center/cover;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            color: white;
+            font-size: 36px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>See you February 14th! ❤️</h1>
+
+    <script>
+        function confettiEffect() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = "🎉";
+            confetti.style.position = "fixed";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.top = "-50px";
+            confetti.style.fontSize = Math.random() * 30 + 20 + "px";
+            confetti.style.animation = "fall 3s linear";
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 3000);
+        }
+
+        setInterval(confettiEffect, 200);
+
+        document.head.innerHTML += `
+            <style>
+                @keyframes fall {
+                    to { transform: translateY(100vh); opacity: 0; }
+                }
+            </style>
+        `;
+    </script>
+
+</body>
+</html>
